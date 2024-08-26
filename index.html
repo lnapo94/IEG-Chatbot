@@ -8,6 +8,11 @@
     	function initEmbeddedMessaging() {
     		try {
     			embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
+
+          window.addEventListener("onEmbeddedMessagingReady", () => {            
+          	console.log( "Inside Prechat API!!" );
+          	embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "EspositoreId" : "0097527" } );
+          });
     
     			embeddedservice_bootstrap.init(
     				'00D5t0000008hjC',
