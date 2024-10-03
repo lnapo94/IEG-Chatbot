@@ -17,8 +17,12 @@
             <input type="text" id="edizione" name="Codice Edizione" value="WEL24">
 	    <br><br>
 
-	    <label for="nomeCognome">Nome e Cognome:</label><br>
-            <input type="text" id="nomeCognome" name="Nome e Cognome" value="Test Example">
+	    <label for="nome">Nome</label><br>
+            <input type="text" id="nome" name="Nome" value="Test">
+	    <br><br>
+
+	    <label for="cognome">Nome</label><br>
+            <input type="text" id="cognome" name="Cognome" value="Example">
 	    <br><br>
 
 	    <label for="profilo">Profilo:</label><br>
@@ -48,7 +52,8 @@
                     const recordTypeId = document.getElementById("recordTypeId").value;
                     const espositoreId = document.getElementById("espositoreId").value;
                     const edizione = document.getElementById("edizione").value;
-                    const nomeCognome = document.getElementById("nomeCognome").value;
+                    const nome = document.getElementById("nome").value;
+		    const cognome = document.getElementById("cognome").value;
                     const profilo = document.getElementById("profilo").value;
                     const lingua = document.getElementById("lingua").value;
                     const email = document.getElementById("email").value;
@@ -58,19 +63,20 @@
 		    console.log('Record Type Id:', recordTypeId)
                     console.log('Espositore Id:', espositoreId)
                     console.log('Codice Edizione:', edizione)
-		    console.log('Nome e Cognome:', nomeCognome)
+		    console.log('Nome:', nome)
+		    console.log('Cognome:', cognome)
                     console.log('Profilo:', profilo)
                     console.log('Lingua:', lingua)
 		    console.log('Email:', email)
                     console.log('Numero Pratica:', numeroPratica)
                     console.log('Posizione e Stand:', posizioneStand)
 
-                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nomeCognome, profilo, lingua, email, numeroPratica, posizioneStand)
+                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand)
                 }
             </script>
 
 			<script type='text/javascript'>
-				function initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nomeCognome, profilo, lingua, email, numeroPratica, posizioneStand) {
+				function initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand) {
 					try {
 						embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
 
@@ -80,7 +86,8 @@
 				    "CaseRecordTypeId" : recordTypeId, 
 				    "CodiceEdizione": edizione,
 				    "CodiceSIAEspositore" : espositoreId, 
-				    "NomeCognome": nomeCognome,
+				    "Nome": nome,
+				    "Cognome": cognome,
 				    "Profilo" : profilo, 
 				    "Lingua": lingua,
 				    "Email" : email, 
