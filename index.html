@@ -76,7 +76,17 @@
 
                         window.addEventListener("onEmbeddedMessagingReady", () => {            
                             console.log( "Inside Prechat API!!" );
-                            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { "CodiceSIAEspositore" : espositoreId, "CodiceEdizione": codiceEdizione } );
+                            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields( { 
+				    "CaseRecordTypeId" : recordTypeId, 
+				    "CodiceEdizione": codiceEdizione,
+				    "CodiceSIAEspositore" : espositoreId, 
+				    "NomeCognome": nomeCognome,
+				    "Profilo" : profilo, 
+				    "Lingua": lingua,
+				    "Email" : email, 
+				    "NumeroPratica": numeroPratica,
+				    "PosizioneStand": posizioneStand
+			    } );
                         });
 			
 						embeddedservice_bootstrap.init(
