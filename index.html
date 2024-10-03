@@ -5,6 +5,9 @@
 	<body>
             <h1>TEST CHATBOT</h1>
 
+	    <label for="recordTypeId">Record Type Id:</label><br>
+            <input type="text" id="recordTypeId" name="Record Type Id" value="012MB000000EPJVYA4">
+
             <label for="espositoreId">Codice SIA Espositore:</label><br>
             <input type="text" id="espositoreId" name="Espositore Id" value="0097527">
             <br><br>
@@ -12,16 +15,48 @@
             <label for="edizione">Codice Edizione:</label><br>
             <input type="text" id="edizione" name="Codice Edizione" value="WEL24">
 
+	    <label for="nomeCognome">Nome e Cognome:</label><br>
+            <input type="text" id="nomeCognome" name="Nome e Cognome" value="Test Example">
+
+	    <label for="profilo">Profilo:</label><br>
+            <input type="text" id="profilo" name="Profilo" value="Master">
+
+	    <label for="lingua">Lingua:</label><br>
+            <input type="text" id="lingua" name="Lingua Area Riservata" value="it">
+
+	    <label for="email">Email:</label><br>
+            <input type="text" id="email" name="Email" value="test@example.com">
+
+	    <label for="numeroPratica">Numero Pratica:</label><br>
+            <input type="text" id="numeroPratica" name="Numero Pratica" value="123456789">
+
+	    <label for="posizioneStand">Posizione & Stand:</label><br>
+            <input type="text" id="posizioneStand" name="Posizione e Stand" value="P1 - 4">
+
             <br><br><br>
             <button onclick="buttonClick()" id="button">Inizializza Chat</button>
 
             <script type='text/javascript'>
                 function buttonClick() {
+                    const recordTypeId = document.getElementById("recordTypeId").value;
                     const espositoreId = document.getElementById("espositoreId").value;
-                    const codiceEdizione = document.getElementById("edizione").value;
+                    const edizione = document.getElementById("edizione").value;
+                    const nomeCognome = document.getElementById("nomeCognome").value;
+                    const profilo = document.getElementById("profilo").value;
+                    const lingua = document.getElementById("lingua").value;
+                    const email = document.getElementById("email").value;
+                    const numeroPratica = document.getElementById("numeroPratica").value;
+                    const posizioneStand = document.getElementById("posizioneStand").value;
 
+		    console.log('Record Type Id:', recordTypeId)
                     console.log('Espositore Id:', espositoreId)
                     console.log('Codice Edizione:', codiceEdizione)
+		    console.log('Nome e Cognome:', nomeCognome)
+                    console.log('Profilo:', profilo)
+                    console.log('Lingua:', lingua)
+		    console.log('Email:', email)
+                    console.log('Numero Pratica:', numeroPratica)
+                    console.log('Posizione e Stand:', posizioneStand)
 
                     initEmbeddedMessaging(espositoreId, codiceEdizione)
                 }
