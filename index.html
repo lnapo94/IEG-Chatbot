@@ -44,6 +44,11 @@
 	    <label for="posizioneStand">Posizione & Stand:</label><br>
             <input type="text" id="posizioneStand" name="Posizione e Stand" value="C7 | 312-314">
 
+	    <br><br>
+
+	    <label for="abilitaLiveChat">Abilita Live Chat:</label><br>
+            <input type="text" id="abilitaLiveChat" name="Abilita Live Chat" value="true">
+
             <br><br><br>
             <button onclick="buttonClick()" id="button">Inizializza Chat</button>
 
@@ -59,6 +64,7 @@
                     const email = document.getElementById("email").value;
                     const numeroPratica = document.getElementById("numeroPratica").value;
                     const posizioneStand = document.getElementById("posizioneStand").value;
+                    const abilitaLiveChat = document.getElementById("abilitaLiveChat").value;
 
 		    console.log('Record Type Id:', recordTypeId)
                     console.log('Espositore Id:', espositoreId)
@@ -70,8 +76,9 @@
 		    console.log('Email:', email)
                     console.log('Numero Pratica:', numeroPratica)
                     console.log('Posizione e Stand:', posizioneStand)
+                    console.log('Abilita Live Chat:', abilitaLiveChat)
 
-                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand)
+                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand, abilitaLiveChat)
                 }
             </script>
 
@@ -92,7 +99,8 @@
 				    "LinguaAreaRiservata": lingua,
 				    "Email" : email, 
 				    "NumeroPratica": numeroPratica,
-				    "PosizioneStand": posizioneStand
+				    "PosizioneStand": posizioneStand,
+				    "AbilitaLiveChat": abilitaLiveChat
 			    } );
                         });
 			
