@@ -49,6 +49,12 @@
 	    <label for="abilitaLiveChat">Abilita Live Chat:</label><br>
             <input type="text" id="abilitaLiveChat" name="Abilita Live Chat" value="true">
 
+	    <label for="linguaChatbot">Lingua Chatbot:</label>
+	    <select name="Lingua Chatbot" id="linguaChatbot">
+	    	<option value="it">Italiano</option>
+	        <option value="en_US">Inglese</option>
+	    </select>
+
             <br><br><br>
             <button onclick="buttonClick()" id="button">Inizializza Chat</button>
 
@@ -65,6 +71,7 @@
                     const numeroPratica = document.getElementById("numeroPratica").value;
                     const posizioneStand = document.getElementById("posizioneStand").value;
                     const abilitaLiveChat = document.getElementById("abilitaLiveChat").value;
+		    const linguaChatbot = document.getElementById("linguaChatbot").value;
 
 		    console.log('Record Type Id:', recordTypeId)
                     console.log('Espositore Id:', espositoreId)
@@ -77,13 +84,14 @@
                     console.log('Numero Pratica:', numeroPratica)
                     console.log('Posizione e Stand:', posizioneStand)
                     console.log('Abilita Live Chat:', abilitaLiveChat)
+		    console.log('Lingua Chatbot:', linguaChatbot)
 
-                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand, abilitaLiveChat)
+                    initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand, abilitaLiveChat, linguaChatbot)
                 }
             </script>
 
 			<script type='text/javascript'>
-				function initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand, abilitaLiveChat) {
+				function initEmbeddedMessaging(recordTypeId, espositoreId, edizione, nome, cognome, profilo, lingua, email, numeroPratica, posizioneStand, abilitaLiveChat, linguaChatbot) {
 					try {
 						embeddedservice_bootstrap.settings.language = 'it'; // For example, enter 'en' or 'en-US'
 
@@ -100,7 +108,8 @@
 				    "Email" : email, 
 				    "NumeroPratica": numeroPratica,
 				    "PosizioneStand": posizioneStand,
-				    "AbilitaLiveChat": abilitaLiveChat
+				    "AbilitaLiveChat": abilitaLiveChat,
+				    "LinguaChatbot": linguaChatbot
 			    } );
                         });
 			
